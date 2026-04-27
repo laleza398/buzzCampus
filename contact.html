@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuzzCampus | Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="particles-canvas"></canvas>
+<nav>
+ <div class="nav-brand">
+<div class="logo-wrapper">
+  <img src="images/logo.png" alt="BuzzCampus Logo" class="logo-animated">
+</div>
+
+ <span class="buzz">Buzz</span><span class="campus">Campus</span></div>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="services.html">Services</a><a href="gallery.html">Gallery</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+  <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-header">
+  <h1>Contact Us</h1>
+  <p>We'd love to hear from you — students, partners and campuses welcome.</p>
+</div>
+
+<section class="contact-section">
+  <div class="contact-info reveal-left">
+    <h2>Get in Touch</h2>
+    <div class="contact-item">
+      <div class="contact-icon">📧</div>
+      <div class="contact-item-text">
+        <strong>Email</strong>
+        <p>hello@buzzcampus.co.za</p>
+        <p style="font-size:12px;color:var(--blue);margin-top:2px;">Reply within 4 hours</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div class="contact-item-text">
+        <strong>Phone</strong>
+        <p>+27 53 839 2000</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:2px;">Mon–Fri, 08:00–20:00</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div class="contact-item-text">
+        <strong>Campus HQ</strong>
+        <p>Sol Plaatje University</p>
+        <p style="font-size:13px;color:var(--muted);">Barkly Road, Kimberley, Northern Cape, 8301</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🕐</div>
+      <div class="contact-item-text">
+        <strong>Office Hours</strong>
+        <p>Mon–Fri: 08:00 – 20:00</p>
+        <p style="font-size:13px;color:var(--muted);">Sat: 09:00 – 14:00</p>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <a href="#" class="social-link"><span class="s-icon">📸</span> Instagram: @BuzzCampusSA</a>
+      <a href="#" class="social-link"><span class="s-icon">🎵</span> TikTok: @buzzcampus</a>
+      <a href="#" class="social-link"><span class="s-icon">🐦</span> Twitter / X: @BuzzCampusSA</a>
+      <a href="#" class="social-link"><span class="s-icon">💼</span> LinkedIn: BuzzCampus SA</a>
+    </div>
+
+    <!-- Google Maps embed -->
+    <div class="map-embed" style="margin-top:24px;">
+      <!--
+        ADD GOOGLE MAPS:
+        1. Go to google.com/maps
+        2. Search "Sol Plaatje University Kimberley"
+        3. Click Share → Embed a map → Copy iframe
+        4. Paste it below replacing this comment
+        The CSS already styles it dark (inverted + hue-rotate)
+      -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.123!2d24.7654!3d-28.7323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e8e4c7c0000000%3A0x0!2sSol+Plaatje+University!5e0!3m2!1sen!2sza!4v1234567890"
+        width="100%" height="200"
+        style="border:0;border-radius:12px;filter:invert(90%) hue-rotate(180deg) saturate(0.7);"
+        allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="contact-form reveal-right">
+    <h2>Send Us a Message</h2>
+    <!--
+      FORMSPREE SETUP:
+      1. Go to formspree.io → Sign up free
+      2. Click "New Form" → name it "BuzzCampus Contact"
+      3. Copy your Form ID (e.g. xpzgkwld)
+      4. Replace YOUR_FORMSPREE_ID in the action below
+      5. Every submission lands in your email instantly
+    -->
+    <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <input type="hidden" name="_subject" value="BuzzCampus Contact Form">
+      <input type="hidden" name="_next"    value="https://yoursite.netlify.app/contact.html">
+
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" placeholder="e.g. Thabo Molefe" required>
+      </div>
+      <div class="form-group">
+        <label for="email">University Email *</label>
+        <input type="email" id="email" name="email" placeholder="you@university.ac.za" required>
+      </div>
+      <div class="form-group">
+        <label for="university">University</label>
+        <select id="university" name="university">
+          <option value="">Select your university</option>
+          <option>Sol Plaatje University</option>
+          <option>University of Pretoria (UP)</option>
+          <option>Wits University</option>
+          <option>UCT</option>
+          <option>Stellenbosch University</option>
+          <option>UNISA</option>
+          <option>University of Johannesburg (UJ)</option>
+          <option>UKZN</option>
+          <option>Rhodes University</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="topic">Topic *</label>
+        <select id="topic" name="topic" required>
+          <option value="">Select a topic</option>
+          <option>General Enquiry</option>
+          <option>Join BuzzCampus</option>
+          <option>Campus Partnership</option>
+          <option>BuzzRide Support</option>
+          <option>Wellness Support</option>
+          <option>Technical Support</option>
+          <option>Media / Press</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+      </div>
+
+      <button type="submit" id="submit-btn" class="btn btn-purple" style="width:100%;font-size:15px;padding:14px;justify-content:center;">
+        📩 Send Message
+      </button>
+      <p class="form-note">🔒 Powered by Formspree · Your data is never sold or shared.</p>
+    </form>
+
+    <div class="success-message" id="success-message">
+      <h3>✅ Message Sent!</h3>
+      <p>Thanks for reaching out! We'll reply within 4 hours.</p>
+      <p style="margin-top:8px;font-size:12px;">Check your inbox for a confirmation email.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="nav-brand" style="margin-bottom:12px;font-size:22px;"><span class="buzz">Buzz</span><span class="campus">Campus</span></div><p>South Africa's digital student lifestyle platform. Connect. Discover. Thrive.</p></div>
+    <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Follow Us</h4><ul><li><a href="#">📸 Instagram</a></li><li><a href="#">🎵 TikTok</a></li><li><a href="#">🐦 Twitter / X</a></li><li><a href="#">💼 LinkedIn</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BuzzCampus. All rights reserved.</span>
+    <span>Your Campus. Amplified. 🇿🇦</span>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

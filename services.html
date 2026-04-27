@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuzzCampus | Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="particles-canvas"></canvas>
+<nav>
+ <div class="nav-brand">
+<div class="logo-wrapper">
+  <img src="images/logo.png" alt="BuzzCampus Logo" class="logo-animated">
+</div>
+    <span class="buzz">Buzz</span><span class="campus">Campus</span>
+  </div>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="gallery.html">Gallery</a><a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-header">
+  <h1>Our Services</h1>
+  <p>Five features. One platform. Every student covered.</p>
+</div>
+
+<div class="services-tabs">
+  <button class="svc-tab active" data-svc="events"    onclick="switchSvc('events')">🎟️ Events</button>
+  <button class="svc-tab"        data-svc="deals"     onclick="switchSvc('deals')">🛍️ Deals</button>
+  <button class="svc-tab"        data-svc="market"    onclick="switchSvc('market')">🛒 Marketplace</button>
+  <button class="svc-tab"        data-svc="buzzride"  onclick="switchSvc('buzzride')">🚖 BuzzRide</button>
+  <button class="svc-tab"        data-svc="wellness"  onclick="switchSvc('wellness')">🧠 Wellness Hub</button>
+</div>
+
+<!-- EVENTS -->
+<div class="svc-panel active" id="events">
+  <h2>🎟️ Events & Ticketing</h2>
+  <p>Discover upcoming campus events across South Africa — from graduation parties to career expos, music events to hackathons. Powered by the Ticketmaster Discovery API.</p>
+  <ul class="tip-list">
+    <li>Real-time event listings from campuses nationwide</li>
+    <li>RSVP and buy tickets securely in-app</li>
+    <li>Filter by campus, date, price and category</li>
+    <li>Event reminders and calendar sync</li>
+    <li>Free event hosting for student societies</li>
+  </ul>
+  <div id="events-container"><div style="color:var(--muted);font-size:13px;font-style:italic;">⏳ Loading events...</div></div>
+  <div style="margin-top:14px;">
+    <button class="btn btn-primary" onclick="loadEvents()" style="font-size:13px;padding:10px 20px;">🔄 Refresh Events</button>
+  </div>
+</div>
+
+<!-- DEALS -->
+<div class="svc-panel" id="deals">
+  <h2>🛍️ Student Deals & Discounts</h2>
+  <p>Exclusive partnerships with real South African brands — food, transport, tech, clothing and more. All verified and updated weekly.</p>
+  <ul class="tip-list">
+    <li>Takealot: 15% off electronics for verified students</li>
+    <li>Steers & Debonairs: student meal combos from R49</li>
+    <li>Uber: 20% off first 5 rides with code BUZZRIDE</li>
+    <li>Clicks: 10% off health & beauty products</li>
+    <li>Sportscene & Total Sports: 15% student discount</li>
+    <li>Netflix: R49/month student plan via BuzzCampus</li>
+  </ul>
+  <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+    <div style="background:rgba(0,180,255,0.06);border:1px solid rgba(0,180,255,0.18);border-radius:10px;padding:16px;text-align:center;">
+      <div style="font-size:28px;margin-bottom:8px;">🍔</div>
+      <div style="font-family:var(--fh);font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px;">Steers Student Combo</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">Burger + Chips + Drink</div>
+      <div style="font-size:16px;font-weight:700;color:var(--blue);">R49</div>
+    </div>
+    <div style="background:rgba(155,92,246,0.06);border:1px solid rgba(155,92,246,0.18);border-radius:10px;padding:16px;text-align:center;">
+      <div style="font-size:28px;margin-bottom:8px;">💻</div>
+      <div style="font-family:var(--fh);font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px;">Takealot Tech Deal</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">15% off all electronics</div>
+      <div style="font-size:16px;font-weight:700;color:var(--purple);">15% OFF</div>
+    </div>
+    <div style="background:rgba(0,180,255,0.06);border:1px solid rgba(0,180,255,0.18);border-radius:10px;padding:16px;text-align:center;">
+      <div style="font-size:28px;margin-bottom:8px;">🎬</div>
+      <div style="font-family:var(--fh);font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px;">Netflix Student Plan</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:8px;">Via BuzzCampus partnership</div>
+      <div style="font-size:16px;font-weight:700;color:var(--blue);">R49/mo</div>
+    </div>
+  </div>
+</div>
+
+<!-- MARKETPLACE -->
+<div class="svc-panel" id="market">
+  <h2>🛒 Peer-to-Peer Marketplace</h2>
+  <p>Buy and sell directly with verified students on your campus. No middleman. No commission on sales under R500.</p>
+  <ul class="tip-list">
+    <li>Textbooks, notes and study guides at student prices</li>
+    <li>Dorm essentials: kettles, microwaves, lamps and more</li>
+    <li>Laptop and tech accessories from fellow students</li>
+    <li>Clothing, uniforms and faculty merch</li>
+    <li>Verified student-only listings — no scammers</li>
+    <li>In-app chat and safe meetup zone recommendations</li>
+  </ul>
+  <div style="margin-top:20px;">
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;">
+      <input type="text" placeholder="Search marketplace listings..." style="flex:1;min-width:160px;background:rgba(255,255,255,0.04);border:1px solid rgba(155,92,246,0.2);border-radius:8px;padding:10px 14px;color:var(--white);font-size:13px;font-family:var(--fb);outline:none;" id="market-search">
+      <button class="btn btn-purple" onclick="showToast('🛒 Marketplace search coming soon!')" style="font-size:13px;padding:10px 20px;">Search</button>
+    </div>
+    <div style="font-size:13px;color:var(--muted);">💡 Tip: Log in with your university email to browse and list items.</div>
+  </div>
+</div>
+
+<!-- BUZZRIDE -->
+<div class="svc-panel" id="buzzride">
+  <h2>🚖 BuzzRide — Safe Student Transport</h2>
+  <p>BuzzRide connects students with verified, campus-approved drivers for safe late-night and early-morning transport. Integrated with Google Maps for live tracking.</p>
+  <ul class="tip-list">
+    <li>Verified drivers — background-checked and campus-approved</li>
+    <li>Live GPS tracking shared with trusted contacts</li>
+    <li>SOS button instantly alerts campus security and SAPS</li>
+    <li>Female-only ride option available at all times</li>
+    <li>Affordable rates — from R15 for on-campus routes</li>
+    <li>Scheduled rides for early morning exam slots</li>
+  </ul>
+  <div style="margin-top:20px;background:rgba(0,180,255,0.05);border:1px solid rgba(0,180,255,0.15);border-radius:12px;padding:20px;">
+    <div style="font-size:14px;font-weight:600;margin-bottom:14px;color:var(--blue);">📍 Book a BuzzRide</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;">
+      <div class="form-group"><label>Your Campus</label>
+        <select><option>Sol Plaatje University</option><option>University of Pretoria</option><option>Wits University</option><option>UCT</option><option>UNISA</option><option>UJ</option><option>UKZN</option></select>
+      </div>
+      <div class="form-group"><label>Pickup Location</label><input type="text" placeholder="e.g. Res Block C"></div>
+      <div class="form-group"><label>Drop-off Location</label><input type="text" placeholder="e.g. Hatfield Plaza"></div>
+      <div class="form-group"><label>Time</label><input type="time"></div>
+    </div>
+    <button class="btn btn-primary" onclick="showToast('🚖 BuzzRide request sent! Driver assigned in ~3 minutes.')" style="margin-top:8px;font-size:13px;padding:10px 24px;">Request Ride</button>
+    <!-- ADD: embed Google Maps iframe here
+         <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="220" style="border:0;border-radius:10px;margin-top:16px;" allowfullscreen loading="lazy"></iframe>
+    -->
+  </div>
+</div>
+
+<!-- WELLNESS HUB (AI Chatbot) -->
+<div class="svc-panel" id="wellness">
+  <h2>🧠 Wellness Hub</h2>
+  <p>Your mental health matters. The BuzzCampus Wellness Hub provides AI-powered support, resources and counselling access — 24/7, from your phone. For serious matters, we connect you to professional help.</p>
+  <ul class="tip-list">
+    <li>AI wellness chatbot — stress, anxiety, burnout support</li>
+    <li>Guided breathing exercises and mindfulness tools</li>
+    <li>Campus counsellor booking in 2 clicks</li>
+    <li>Anonymous peer support groups</li>
+    <li>SADAG emergency line integration: 0800 456 789</li>
+  </ul>
+  <div class="chat-box" style="margin-top:18px;">
+    <div style="font-size:13px;font-weight:600;color:var(--purple);margin-bottom:12px;">💬 BuzzWellness Chat</div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-input-row">
+      <input type="text" id="chat-input" placeholder='Try: "stressed", "burnout", "anxious", "help"...' onkeypress="chatKeyPress(event)">
+      <button class="btn btn-purple" onclick="sendChat()" style="font-size:13px;padding:10px 18px;">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="pricing-section reveal">
+  <h2>Simple Pricing</h2>
+  <div class="plans-grid stagger">
+    <div class="plan-card">
+      <h3>Free</h3>
+      <div class="plan-price">R0 <small>/month</small></div>
+      <ul>
+        <li>Browse events</li>
+        <li>View deals</li>
+        <li>Wellness chatbot</li>
+        <li>Marketplace browsing</li>
+      </ul>
+      <a href="contact.html" class="btn btn-outline" style="display:block;text-align:center;margin-top:16px;">Get Started</a>
+    </div>
+    <div class="plan-card featured">
+      <span class="plan-badge">⭐ Most Popular</span>
+      <h3>Student Plus</h3>
+      <div class="plan-price">R49 <small>/month</small></div>
+      <ul>
+        <li>Everything in Free</li>
+        <li>Buy & sell on marketplace</li>
+        <li>BuzzRide access</li>
+        <li>Exclusive brand deals</li>
+        <li>Event ticket purchasing</li>
+        <li>Counsellor bookings</li>
+      </ul>
+      <a href="contact.html" class="btn btn-purple" style="display:block;text-align:center;margin-top:16px;">Join Now</a>
+    </div>
+    <div class="plan-card">
+      <h3>Campus Group (10+)</h3>
+      <div class="plan-price">R29 <small>/person/month</small></div>
+      <ul>
+        <li>Everything in Plus</li>
+        <li>Group event creation</li>
+        <li>Campus rep dashboard</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="contact.html" class="btn btn-outline" style="display:block;text-align:center;margin-top:16px;">Group Sign-Up</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="nav-brand" style="margin-bottom:12px;font-size:22px;"><span class="buzz">Buzz</span><span class="campus">Campus</span></div><p>South Africa's digital student lifestyle platform.</p></div>
+    <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Follow Us</h4><ul><li><a href="#">📸 Instagram</a></li><li><a href="#">🎵 TikTok</a></li><li><a href="#">🐦 Twitter / X</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 BuzzCampus. All rights reserved.</span><span>Your Campus. Amplified. 🇿🇦</span></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

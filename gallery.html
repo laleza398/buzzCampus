@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuzzCampus | Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="particles-canvas"></canvas>
+<nav>
+ <div class="nav-brand">
+<div class="logo-wrapper">
+  <img src="images/logo.png" alt="BuzzCampus Logo" class="logo-animated">
+</div>
+
+    <span class="buzz">Buzz</span><span class="campus">Campus</span>
+  </div>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html" class="active">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-header">
+  <h1>Gallery</h1>
+  <p>Campus life, app mockups, events, and more — BuzzCampus in action.</p>
+</div>
+
+<section class="gallery-section">
+  <div class="gallery-filters reveal">
+    <button class="filter-btn active" data-filter="all"       onclick="filterGallery('all')">All</button>
+    <button class="filter-btn"        data-filter="events"    onclick="filterGallery('events')">🎟️ Events</button>
+    <button class="filter-btn"        data-filter="app"       onclick="filterGallery('app')">📱 App UI</button>
+    <button class="filter-btn"        data-filter="campus"    onclick="filterGallery('campus')">🏫 Campus Life</button>
+    <button class="filter-btn"        data-filter="wellness"  onclick="filterGallery('wellness')">🧠 Wellness</button>
+    <button class="filter-btn"        data-filter="buzzride"  onclick="filterGallery('buzzride')">🚖 BuzzRide</button>
+  </div>
+<div class="gallery-grid">
+
+  <!-- EVENTS -->
+  <div class="gallery-item" data-category="events" onclick="openLightbox('images/event-gradbash.jpg','Grad Bash 2025 — UP Campus')">
+    <img src="images/event-gradbash.jpg" alt="Grad Bash Event">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>Grad Bash 2025</h4>
+      <p>UP Main Campus</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="events" onclick="openLightbox('images/event-cypher.jpg','Campus Cypher Vol.3 — Wits')">
+    <img src="images/event-cypher.jpg" alt="Campus Cypher">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>Campus Cypher</h4>
+      <p>Wits Great Hall</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="events" onclick="openLightbox('images/event-techfair.jpg','Tech & Innovation Fair')">
+    <img src="images/event-techfair.jpg" alt="Tech Fair">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>Tech Fair</h4>
+      <p>UJ APK Campus</p>
+    </div>
+  </div>
+
+  <!-- APP UI -->
+  <div class="gallery-item" data-category="app" onclick="openLightbox('images/app-home.jpg','BuzzCampus App — Home Screen')">
+    <img src="images/app-home.jpg" alt="App Home">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>App Dashboard</h4>
+      <p>Home screen overview</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="app" onclick="openLightbox('images/app-events.jpg','BuzzCampus — Events Tab')">
+    <img src="images/app-events.jpg" alt="Events Tab">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>Events Tab</h4>
+      <p>Live event listings</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="app" onclick="openLightbox('images/app-mockup.jpg','BuzzCampus Mobile Mockup')">
+    <img src="images/app-mockup.jpg" alt="App Mockup">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>Mobile Mockup</h4>
+      <p>iOS & Android</p>
+    </div>
+  </div>
+
+  <!-- CAMPUS LIFE -->
+  <div class="gallery-item" data-category="campus" onclick="openLightbox('images/campus-students.jpg','Students on Campus')">
+    <img src="images/campus-students.jpg" alt="Campus Life">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>Campus Life</h4>
+      <p>Students thriving</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="campus" onclick="openLightbox('images/campus-study.jpg','Group Study Session')">
+    <img src="images/campus-study.jpg" alt="Study Session">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>Study Session</h4>
+      <p>Learning together</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="campus" onclick="openLightbox('images/campus-market.jpg','Campus Marketplace')">
+    <img src="images/campus-market.jpg" alt="Marketplace">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>Peer Marketplace</h4>
+      <p>Buy & sell on campus</p>
+    </div>
+  </div>
+
+  <!-- WELLNESS -->
+  <div class="gallery-item" data-category="wellness" onclick="openLightbox('images/wellness-chat.jpg','Wellness Hub Chat')">
+    <img src="images/wellness-chat.jpg" alt="Wellness Chat">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>Wellness Chat</h4>
+      <p>AI mental health support</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="wellness" onclick="openLightbox('images/wellness-meditation.jpg','Campus Wellness Session')">
+    <img src="images/wellness-meditation.jpg" alt="Meditation">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>Wellness Session</h4>
+      <p>Mind & body balance</p>
+    </div>
+  </div>
+
+  <!-- BUZZRIDE -->
+  <div class="gallery-item" data-category="buzzride" onclick="openLightbox('images/buzzride-car.jpg','BuzzRide in Action')">
+    <img src="images/buzzride-car.jpg" alt="BuzzRide">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>BuzzRide</h4>
+      <p>Safe student transport</p>
+    </div>
+  </div>
+
+  <div class="gallery-item" data-category="buzzride" onclick="openLightbox('images/buzzride-map.jpg','BuzzRide Live Map')">
+    <img src="images/buzzride-map.jpg" alt="BuzzRide Map">
+    <div class="gal-overlay">
+      <div class="view-icon">🔍</div>
+      <h4>Live GPS Tracking</h4>
+      <p>Know where your ride is</p>
+    </div>
+  </div>
+
+
+  </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-inner">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <img id="lb-img" src="" alt="Gallery image">
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="nav-brand" style="margin-bottom:12px;font-size:22px;"><span class="buzz">Buzz</span><span class="campus">Campus</span></div><p>South Africa's digital student lifestyle platform.</p></div>
+    <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Follow Us</h4><ul><li><a href="#">📸 Instagram</a></li><li><a href="#">🎵 TikTok</a></li><li><a href="#">🐦 Twitter / X</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 BuzzCampus. All rights reserved.</span><span>Your Campus. Amplified. 🇿🇦</span></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

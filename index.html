@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuzzCampus | Your Campus. Amplified.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAV -->
+<nav>
+ <div class="nav-brand">
+<div class="logo-wrapper">
+  <img src="images/logo.png" alt="BuzzCampus Logo" class="logo-animated">
+</div>
+       <span class="buzz">Buzz</span><span class="campus">Campus</span>
+  </div>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <!-- ADD: <video autoplay muted loop playsinline class="hero-video"><source src="videos/campus.mp4" type="video/mp4"></video> -->
+<video autoplay muted loop playsinline class="hero-video">
+  <source src="videos/buzzcampus-ad.mp4" type="video/mp4">
+</video>
+
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><div class="dot"></div> South Africa's #1 Student Lifestyle Platform</div>
+    <h1>
+      <span class="line-buzz">BUZZ</span>
+      <span class="line-campus">CAMPUS</span>
+    </h1>
+    <div class="hero-slogan">Your Campus. Amplified.</div>
+    <p class="hero-sub">Events. Deals. Safe Transport. Wellness. All in one digital platform built for SA students.</p>
+    <div class="hero-btns">
+      <a href="services.html" class="btn btn-primary">🚀 Explore Features</a>
+      <a href="about.html"    class="btn btn-purple">📖 Our Story</a>
+      <a href="contact.html"  class="btn btn-outline">📩 Join Now</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="val">10K+</div><div class="lbl">Students</div></div>
+    <div class="hero-stat"><div class="val">26</div><div class="lbl">Campuses</div></div>
+    <div class="hero-stat"><div class="val">500+</div><div class="lbl">Events Listed</div></div>
+    <div class="hero-stat"><div class="val">R0</div><div class="lbl">To Join</div></div>
+  </div>
+</section>
+
+<!-- FEATURE HIGHLIGHTS -->
+<section class="features-section">
+  <div class="section-header reveal">
+    <div class="section-tag">What We Offer</div>
+    <h2>Everything Campus. One Platform.</h2>
+    <p>Five powerful features built around how South African university students actually live.</p>
+  </div>
+  <div class="features-grid stagger">
+    <div class="feat-card">
+      <span class="feat-icon">🎟️</span>
+      <h3>Events & Ticketing</h3>
+      <p>Discover, RSVP and buy tickets to campus events — from grad parties to career fairs — all in one place.</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">🛍️</span>
+      <h3>Student Deals</h3>
+      <p>Exclusive discounts from real SA brands. Food, transport, tech, clothing — curated for your budget.</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">🛒</span>
+      <h3>Peer Marketplace</h3>
+      <p>Buy and sell textbooks, notes, dorm essentials and more with verified students on your campus.</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">🚖</span>
+      <h3>BuzzRide</h3>
+      <p>Safe, verified student transport. Never worry about getting home late at night again.</p>
+    </div>
+    <div class="feat-card">
+      <span class="feat-icon">🧠</span>
+      <h3>Wellness Hub</h3>
+      <p>AI wellness chatbot, mental health resources and counselling access — right from your phone.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADVERT BANNER -->
+<section class="advert-section reveal">
+  <div class="advert-banner">
+    <div class="advert-inner">
+      <div class="advert-text">
+        <div class="advert-tag">⚡ Founding Member Offer — Students Only</div>
+        <h2>Find Events. Get <em>Deals</em>. Travel Safely.<br>All in One Platform.</h2>
+        <p class="advert-desc">
+          BuzzCampus is the digital hub that connects SA university students with everything they need — campus events, exclusive brand discounts, a peer marketplace, verified safe transport and a mental wellness support hub. Designed for the 18–25 student lifestyle.
+        </p>
+        <div class="advert-pills">
+          <span class="advert-pill">🎟️ Event Discovery</span>
+          <span class="advert-pill">🛍️ Student Discounts</span>
+          <span class="advert-pill">🚖 BuzzRide Safety</span>
+          <span class="advert-pill">🧠 Wellness Support</span>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="services.html" class="btn btn-primary">Claim Your Spot</a>
+          <a href="about.html" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+      <div class="advert-right">
+        <div class="advert-price-box">
+          <div class="original">R199/month</div>
+          <div class="price">R49</div>
+          <div class="per">/month — founding member</div>
+        </div>
+        <div class="advert-code-label">Click to copy your code</div>
+        <div class="advert-code" id="promo-code" onclick="copyCode()">BUZZ25</div>
+        <div class="advert-timer" id="countdown">Calculating...</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE WIDGETS -->
+<section style="padding:0 40px 60px;position:relative;z-index:1;">
+  <div class="section-header reveal" style="margin-bottom:28px;">
+    <div class="section-tag">Live Dashboard</div>
+    <h2>Your Campus, Right Now</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;" class="stagger">
+    <div class="gcard">
+      <h3 style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;">🕐 Campus Time</h3>
+      <div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--blue);text-shadow:0 0 20px rgba(0,180,255,0.4);" id="live-clock">--:--:--</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px;" id="live-date">---</div>
+    </div>
+    <div class="gcard">
+      <h3 style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;">🎟️ Events This Week</h3>
+      <div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--purple);text-shadow:0 0 20px rgba(155,92,246,0.4);">12+</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px;">Across SA campuses</div>
+    </div>
+    <div class="gcard">
+      <h3 style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;">🛍️ Active Deals</h3>
+      <div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--blue);">87</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px;">Student-exclusive offers</div>
+    </div>
+    <div class="gcard">
+      <h3 style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;">🚖 BuzzRide Trips Today</h3>
+      <div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--purple);">234</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:4px;">Safe rides completed</div>
+    </div>
+  </div>
+</section>
+
+<!-- MOTIVATIONAL QUOTE (Quotable API) -->
+<section class="quote-section reveal">
+  <div class="section-header" style="margin-bottom:24px;">
+    <div class="section-tag">Daily Inspiration</div>
+    <h2>Today's Motivational Quote</h2>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text" id="quote-text">Loading your daily inspiration...</div>
+    <div class="quote-author" id="quote-author"></div>
+    <button class="quote-refresh" onclick="loadQuote()">🔄 New Quote</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-brand" style="margin-bottom:12px;font-size:22px;">
+        
+        <span class="buzz">Buzz</span><span class="campus">Campus</span>
+      </div>
+      <p>South Africa's digital student lifestyle platform. Connect. Discover. Thrive.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="#">📸 Instagram</a></li>
+        <li><a href="#">🎵 TikTok</a></li>
+        <li><a href="#">🐦 Twitter / X</a></li>
+        <li><a href="contact.html">📩 Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 BuzzCampus. All rights reserved.</span>
+    <span>Built for SA Students 🇿🇦 · Your Campus. Amplified.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

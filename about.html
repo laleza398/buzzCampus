@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuzzCampus | About Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="particles-canvas"></canvas>
+<nav>
+  <div class="nav-brand">
+<div class="logo-wrapper">
+  <img src="images/logo.png" alt="BuzzCampus Logo" class="logo-animated">
+</div>
+   
+    <span class="buzz">Buzz</span><span class="campus">Campus</span>
+  </div>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <button class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-header">
+  <h1>About BuzzCampus</h1>
+  <p>Student-developed. Community-driven. Built to amplify campus life.</p>
+</div>
+
+<!-- STORY -->
+<section class="about-story reveal">
+  <p>BuzzCampus was created by a group of South African university students who were tired of fragmented campus experiences — missing events, paying too much, struggling to get home safely at night, and feeling disconnected from support when it mattered most. We built the platform we always needed: one digital hub that brings events, deals, transport, a marketplace and wellness together for every SA student.</p>
+</section>
+
+<!-- VALUES -->
+<div class="section-header reveal" style="padding:36px 40px 0;">
+  <div class="section-tag">What Drives Us</div>
+  <h2>Our Core Values</h2>
+</div>
+<div class="values-grid stagger">
+  <div class="value-card">
+    <span class="v-icon">🛡️</span>
+    <h3>Safety</h3>
+    <p>BuzzRide and verified profiles ensure every student can move and connect safely, day and night.</p>
+  </div>
+  <div class="value-card">
+    <span class="v-icon">🤝</span>
+    <h3>Community</h3>
+    <p>We connect students across campuses, courses and cultures — because better connections mean better lives.</p>
+  </div>
+  <div class="value-card">
+    <span class="v-icon">💰</span>
+    <h3>Affordability</h3>
+    <p>Every feature is designed with NSFAS students and tight budgets in mind. No hidden costs. No exclusion.</p>
+  </div>
+  <div class="value-card">
+    <span class="v-icon">🌍</span>
+    <h3>Inclusion</h3>
+    <p>BuzzCampus serves students from all 26 public universities across South Africa, regardless of background.</p>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="about-stats stagger" style="padding:0 40px 20px;">
+  <div class="stat-box">
+    <div class="stat-num" data-count="26" data-suffix="">0</div>
+    <div class="stat-label">SA Universities</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-num" data-count="10000" data-suffix="+">0</div>
+    <div class="stat-label">Students Reached</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-num" data-count="500" data-suffix="+">0</div>
+    <div class="stat-label">Events Listed</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-num" data-count="87" data-suffix="">0</div>
+    <div class="stat-label">Active Deals</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-num" data-count="49" data-suffix="R">0</div>
+    <div class="stat-label">Starting Price/Month</div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<section class="timeline reveal">
+  <h2>Our Journey</h2>
+  <div class="timeline-list">
+    <div class="tl-item">
+      <div class="tl-dot">1</div>
+      <div class="tl-content">
+        <div class="tl-year">April-10-2026 — The Idea</div>
+        <h4>Born from frustration</h4>
+        <p>A group of 10 students at Sol Plaatje University identified the gap: no single platform connected campus life digitally.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2</div>
+      <div class="tl-content">
+        <div class="tl-year">April-20-2026 — Development</div>
+        <h4>Building the Platform</h4>
+        <p>We spend days and nights designing, testing, and building BuzzCampus with real student feedback from 5 universities.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">3</div>
+      <div class="tl-content">
+        <div class="tl-year">April-30-2026 — Launch</div>
+        <h4>Going Live</h4>
+        <p>BuzzCampus officially launched across 3 universities, onboarding 2,000 students in the first month.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">4</div>
+      <div class="tl-content">
+        <div class="tl-year">May-01-2026 — Growth</div>
+        <h4>Scaling Nationally</h4>
+        <p>Expanding to all 26 SA public universities, adding BuzzRide nationwide and partnering with major student brands.</p>
+      </div>
+    </div>
+  s
+</section>
+
+<!-- TEAM -->
+<section class="team-section reveal">
+  <h2>Meet the Team</h2>
+
+  <!-- Leader -->
+  <div class="leader-card">
+    <div class="avatar leader">AF</div>
+    <div>
+      <div class="t-name">A. F Ncalane</div>
+      <div class="t-role">Group Leader</div>
+    </div>
+  </div>
+
+  <!-- Members -->
+  <div class="team-grid">
+
+    <div class="team-card"><div class="avatar">NN</div><div class="t-name">N Ntshangase</div></div>
+    <div class="team-card"><div class="avatar">SS</div><div class="t-name">S. S Zwane</div></div>
+    <div class="team-card"><div class="avatar">MR</div><div class="t-name">M. R Mdakane</div></div>
+    <div class="team-card"><div class="avatar">SN</div><div class="t-name">S. N Ngwazi</div></div>
+    <div class="team-card"><div class="avatar">MA</div><div class="t-name">M. A Ngwenya</div></div>
+    <div class="team-card"><div class="avatar">GP</div><div class="t-name">G. P Mogamme</div></div>
+    <div class="team-card"><div class="avatar">ON</div><div class="t-name">O Ngesi</div></div>
+    <div class="team-card"><div class="avatar">NL</div><div class="t-name">N Lefohla</div></div>
+    <div class="team-card"><div class="avatar">MM</div><div class="t-name">M Mutobvu</div></div>
+
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-brand" style="margin-bottom:12px;font-size:22px;"><span class="buzz">Buzz</span><span class="campus">Campus</span></div>
+      <p>South Africa's digital student lifestyle platform. Connect. Discover. Thrive.</p>
+    </div>
+    <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="footer-col"><h4>Follow Us</h4><ul><li><a href="#">📸 Instagram</a></li><li><a href="#">🎵 TikTok</a></li><li><a href="#">🐦 Twitter / X</a></li><li><a href="contact.html">📩 Email Us</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 BuzzCampus. All rights reserved.</span><span>Built for SA Students 🇿🇦</span></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
